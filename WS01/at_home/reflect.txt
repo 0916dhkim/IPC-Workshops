@@ -1,0 +1,5 @@
+This program prints "Welcome to C Programming" enclosed within borders.
+The top & bottom borders are exactly the same length, so a function to print repeating stars is written.
+printStars function takes an integer argument and print stars that many times without line break.
+In main function, the top border is printed which is 32 characters wide, then the main text. Finally, the bottom border is printed, and the program terminates with code 0.
+
