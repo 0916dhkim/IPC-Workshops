@@ -1,0 +1,6 @@
+Script started on Tue 22 Sep 2020 11:01:22 AM EDT
+Please enter the amount to be paid: $8.68
+Loonies required: 8, balance owing $0.68
+Quarters required: 2, balance owing $0.18
+
+Script done on Tue 22 Sep 2020 11:01:36 AM EDT
