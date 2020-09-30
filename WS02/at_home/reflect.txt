@@ -1,0 +1,12 @@
+When programming in C, programmers have to be especially cautious about numeric types. 
+In this week’s module, I learned that there are two types of numeric types in C: int and double. 
+When I mix those types in arithmetic operations, the compiler will conduct implicit casting and it is not obvious which value is casted to which type. 
+Therefore, it is important to explicitly cast values to desired types before doing any operations on those values. 
+Explicit casting makes numeric typing more obvious and prevents accidental type conversions.
+
+Also, floating point numbers in C cannot represent decimal numbers accurately. 
+Each arithmetic expression introduces slight error, so it is important to minimize the number of arithmetic operations. 
+Finding a remainder is a good example of this. 
+If I use modulus operator (%), I can calculate the remainder with single operator. 
+On the other hand, if I use division & subtraction to find the remainder, I would need three operators (division, multiplication & subtraction).
+
