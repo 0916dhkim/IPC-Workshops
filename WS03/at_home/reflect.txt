@@ -1,0 +1,28 @@
+==============================================
+Name:           Donghyeon Kim
+Student Number: 151613197
+Email:          dkim167@myseneca.ca
+Section:        NSS
+Workshop:       3 (in-lab)
+==============================================
+
+Doing an outline reduces the headache during the implementation stage. If I didn't plan before
+typing my solution, I would have had to do the planning and writing at the same time. Having multiple objectives
+is distracting, and makes me prone to making mistakes. I feel like I am more likely to write a well-organized
+code when I have a clear plan beforehand.
+
+While-loops are the most basic iteration construct which repeats a code block "while" the condition is true.
+This type of iteration is appropriate when developers do not know the number of iteration ahead of time.
+I used while-loops when I was required to read user inputs because I wanted to validate user inputs
+and make users enter their inputs again if they made any mistake.
+
+For-loops are slightly more complex than while-loops, and they are often used when developers want to repeat a
+code block for a certain number of times. Because I knew I had to collect temperatures of 4 days, I used
+a for-loop of length 4 to collect high and low temperatures of 4 days.
+
+For this workshop, I manually typed in example inputs and compared the output against the expected output.
+I was able to catch two formatting errors (missing \n characters) by doing so. Also, gcc warned me that
+I have declared `mean`, `meanHigh`, and `meanLow` variables as integers rather than floating-point types.
+If I need to test more complicated I/O scenarios, I would write a file called `input.txt` and pipe it
+to the compiled binary and dump the output into another text file which can be compared against
+the expected output.
