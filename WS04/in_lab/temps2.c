@@ -1,8 +1,8 @@
 //==============================================
-// Name:           Full name here
-// Student Number: #########
-// Email:          userID@myseneca.ca
-// Section:        XXX
+// Name:           Donghyeon Kim
+// Student Number: 151613197
+// Email:          dkim167@myseneca.ca
+// Section:        NSS
 // Workshop:       4 (in-lab)
 //==============================================
 
@@ -25,6 +25,7 @@ int main(void) {
     // Read number of days.
     printf("Please enter the number of days, between 3 and 10, inclusive: ");
     scanf("%d", &num_days);
+    printf("\n");
 
     while (num_days < MIN_DAYS || num_days > MAX_DAYS) {
         printf(
@@ -33,6 +34,7 @@ int main(void) {
             MAX_DAYS
         );
         scanf("%d", &num_days);
+        printf("\n");
     }
 
     // Read temperatures.
@@ -42,6 +44,7 @@ int main(void) {
         printf("Day %d - Low: ", i + 1);
         scanf("%d", &(low_temps[i]));
     }
+    printf("\n");
 
     // Print temperatures.
     printf("Day  Hi  Low\n");
