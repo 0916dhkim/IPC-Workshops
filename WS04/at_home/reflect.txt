@@ -1,0 +1,38 @@
+Name:           Donghyeon Kim
+Student Number: 151613197
+Email:          dkim167@myseneca.ca
+Section:        NSS
+Workshop:       4 (at-home) Reflection
+
+In this workshop, I learned how to use parallel arrays to store data records.
+Using the parallel arrays method is very similar to working with a spreadsheet.
+The only difference is that spreadsheets use column numbers (or letters) while
+parallel arrays use array names (i.e. high_temps, low_temps).
+
+Initializing an array is different from initializing a variable. To initialize
+an array, a developer needs to give it the size because the C programming language
+does not allow dynamic array size. The specification of this workshop stated
+that users should be able to enter 3-10 days worth of data, so it was necessary
+to declare arrays of size 10.
+
+Also in this workshop, there was no specific temperature range was given.
+That's why I used <limits.h> header to get the range of the int type.
+I initialized my `highest_temp` variable to `INT_MIN` and my `lowest_temp`
+variable to `INT_MAX`, then updated each variable when the user enters
+a temperature higher than `highest_temp` or a temperature lower than
+`lowest_temp`.
+
+An alternative to arrays is using subscripted variables like high_1, high_2, etc.
+Technically, we can make as many variables as we want, but it would be difficult
+to iterate through data because variables cannot be indexed like arrays.
+
+Parallel arrays are easy to setup. As long as each array has
+the same length, they can be used to form a record. Adding another field
+is as simple as declaring another array with the same length. One weakness of
+parallel arrays is the initialization. Initializing everything to 0 is easy, but
+initializing them to any other number than 0 is not simple.
+
+It is a common practice to iterate an array with a for-loop. Because all arrays
+are indexed from 0, it is a best practice to initialize the iterator variable to 0.
+Variables hold a unpredictable garbage value when uninitialized.
+
