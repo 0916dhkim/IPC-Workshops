@@ -72,7 +72,8 @@ int main(void) {
 
     int target_days = 0;
     int temp_sum = 0;
-    while (1) {
+    int negative_number_entered = 0;
+    while (!negative_number_entered) {
         printf("Enter a number between 1 and %d ", num_days);
         printf("to see the average temperature for the entered number of days, ");
         printf("enter a negative number to exit: ");
@@ -80,25 +81,28 @@ int main(void) {
         printf("\n");
 
         if (target_days < 0) {
-            break;
-        }
-        while (target_days < 1 || target_days > num_days) {
-            printf("Invalid entry, please enter a number ");
-            printf("between 1 and %d, inclusive: ", num_days);
-            scanf("%d", &target_days);
-            printf("\n");
+            negative_number_entered = 1;
         }
 
-        // Calculate the average.
-        temp_sum = 0;
-        for (i = 0; i < target_days; i++) {
-            temp_sum += high_temps[i] + low_temps[i];
+        if (!negative_number_entered) {
+            while (target_days < 1 || target_days > num_days) {
+                printf("Invalid entry, please enter a number ");
+                printf("between 1 and %d, inclusive: ", num_days);
+                scanf("%d", &target_days);
+                printf("\n");
+            }
+
+            // Calculate the average.
+            temp_sum = 0;
+            for (i = 0; i < target_days; i++) {
+                temp_sum += high_temps[i] + low_temps[i];
+            }
+            printf(
+                "The average temperature up to day %d is %.2lf\n\n",
+                target_days,
+                ((double)temp_sum) / 2.0 / ((double)target_days)
+            );
         }
-        printf(
-            "The average temperature up to day %d is %.2lf\n\n",
-            target_days,
-            ((double)temp_sum) / 2.0 / ((double)target_days)
-        );
     }
 
     // End.
