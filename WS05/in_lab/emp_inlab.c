@@ -1,8 +1,8 @@
 //==============================================
-// Name:           Full name here
-// Student Number: #########
-// Email:          userID@myseneca.ca
-// Section:        XXX
+// Name:           Donghyeon Kim
+// Student Number: 151613197
+// Email:          dkim167@myseneca.ca
+// Section:        NSS
 // Workshop:       5 (in-lab)
 //==============================================
 
@@ -11,18 +11,25 @@
 #include <stdio.h>
 
 // Define Number of Employees "SIZE" to be 2
-		
+#define SIZE 2
 
 // Declare Struct Employee 
-
+struct Employee {
+    int id;
+    int age;
+    double salary;
+};
 
 /* main program */
 int main(void) 
 {
+    int i = 0;
+    int nextEmpIndex = 0;
 	int option = 0;
 
 	// Declare a struct Employee array "emp" with SIZE elements 
 	// and initialize all elements to zero
+    struct Employee emp[SIZE] = {{0}};
     
     
 	printf("---=== EMPLOYEE DATA ===---\n\n");
@@ -55,6 +62,15 @@ int main(void)
 			// printf statement to display
 			// employee id, age and salary of 
 			// all  employees using a loop construct 
+            for (i = 0; i < SIZE; i++) {
+                printf(
+                    "%6d%9d%11.2lf\n",
+                    emp[i].id,
+                    emp[i].age,
+                    emp[i].salary
+                );
+            }
+            printf("\n");
 			
 			// The loop construct will be run for SIZE times 
 			// and will only display Employee data 
@@ -70,8 +86,17 @@ int main(void)
 
 			// Check for limits on the array and add employee 
 			// data accordingly. 
-
-
+            if (nextEmpIndex >= SIZE) {
+                printf("ERROR!!! Maximum Number of Employees Reached\n\n");
+            } else {
+                printf("Enter Employee ID: ");
+                scanf("%d", &emp[nextEmpIndex].id);
+                printf("Enter Employee Age: ");
+                scanf("%d", &emp[nextEmpIndex].age);
+                printf("Enter Employee Salary: ");
+                scanf("%lf", &emp[nextEmpIndex].salary);
+                nextEmpIndex++;
+            }
 
 			break;
 
@@ -80,6 +105,8 @@ int main(void)
 		}
 
 	} while (option != 0);
+
+    printf("Exiting Employee Data Program. Good Bye!!!\n");
 
 	return 0; 
 }
