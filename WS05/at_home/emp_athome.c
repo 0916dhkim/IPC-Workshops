@@ -1,8 +1,8 @@
 //==============================================
-// Name:           Full name here
-// Student Number: #########
-// Email:          userID@myseneca.ca
-// Section:        XXX
+// Name:           Donghyeon Kim
+// Student Number: 151613197
+// Email:          dkim167@myseneca.ca
+// Section:        NSS
 // Workshop:       5 (at-home)
 //==============================================
 
@@ -16,6 +16,168 @@
 // Implement "Update Salary" and "Remove Employee" 
 // functionality as per instructions
 // inside the relevant case statements
+
+#define _CRT_SECURE_NO_WARNINGS
+
+#include <stdio.h>
+
+#define SIZE 4
+
+// Declare Struct Employee 
+struct Employee {
+    int id;
+    int age;
+    double salary;
+};
+
+/* main program */
+int main(void) 
+{
+    int i = 0;
+    int updateEmpId = 0;
+    int removeEmpId = 0;
+    int foundEmp = 0;
+	int option = 0;
+
+	// Declare a struct Employee array "emp" with SIZE elements 
+	// and initialize all elements to zero
+    struct Employee emp[SIZE] = {{0}};
+    
+    
+	printf("---=== EMPLOYEE DATA ===---\n\n");
+
+	do 
+	{
+		// Print the option list
+		printf("1. Display Employee Information\n");
+		printf("2. Add Employee\n");
+        printf("3. Update Employee Salary\n");
+        printf("4. Remove Employee\n");
+		printf("0. Exit\n\n");
+		printf("Please select from the above options: ");
+		
+		// Capture input to option variable
+		scanf("%d",&option);
+		printf("\n");
+		
+		switch (option) 
+		{
+		case 0:	// Exit the program
+			
+			break;
+
+		case 1: // Display Employee Data
+				// @IN-LAB
+
+			printf("EMP ID  EMP AGE EMP SALARY\n");
+			printf("======  ======= ==========\n");
+
+			// Use "%6d%9d%11.2lf" formatting in a   
+			// printf statement to display
+			// employee id, age and salary of 
+			// all  employees using a loop construct 
+            for (i = 0; i < SIZE; i++) {
+                if (emp[i].id != 0) {
+                    printf(
+                        "%6d%9d%11.2lf\n",
+                        emp[i].id,
+                        emp[i].age,
+                        emp[i].salary
+                    );
+                }
+            }
+            printf("\n");
+			
+			// The loop construct will be run for SIZE times 
+			// and will only display Employee data 
+			// where the EmployeeID is > 0
+
+			break;
+
+		case 2:	// Adding Employee
+				// @IN-LAB
+				
+			printf("Adding Employee\n");
+			printf("===============\n");
+
+			// Check for limits on the array and add employee 
+			// data accordingly. 
+            i = 0;
+            while (emp[i].id != 0 && i < SIZE) {
+                i++;
+            }
+            if (i >= SIZE) {
+                printf("ERROR!!! Maximum Number of Employees Reached\n\n");
+            } else {
+                printf("Enter Employee ID: ");
+                scanf("%d", &emp[i].id);
+                printf("Enter Employee Age: ");
+                scanf("%d", &emp[i].age);
+                printf("Enter Employee Salary: ");
+                scanf("%lf", &emp[i].salary);
+                printf("\n");
+            }
+
+			break;
+
+        case 3:
+            printf("Update Employee Salary\n");
+            printf("======================\n");
+
+            foundEmp = 0;
+            do {
+                printf("Enter Employee ID: ");
+                scanf("%d", &updateEmpId);
+                for (i = 0; i < SIZE && !foundEmp; i++) {
+                    if (emp[i].id == updateEmpId) {
+                        foundEmp = 1;
+
+                        printf("The current salary is %.2lf\n", emp[i].salary);
+                        printf("Enter Employee New Salary: ");
+                        scanf("%lf", &emp[i].salary);
+                        printf("\n");
+                    }
+                }
+                if (!foundEmp) {
+                    printf("*** ERROR: Employee ID not found! ***\n");
+                }
+            } while (!foundEmp);
+
+            break;
+
+        case 4:
+            printf("Remove Employee\n");
+            printf("===============\n");
+
+            foundEmp = 0;
+            do {
+                printf("Enter Employee ID: ");
+                scanf("%d", &removeEmpId);
+                for (i = 0; i < SIZE && !foundEmp; i++) {
+                    if (emp[i].id == removeEmpId) {
+                        foundEmp = 1;
+
+                        printf("Employee %d will be removed\n\n", removeEmpId);
+                        emp[i].id = 0;
+                        printf("\n");
+                    }
+                }
+                if (!foundEmp) {
+                    printf("*** ERROR: Employee ID not found! ***\n");
+                }
+            } while (!foundEmp);
+            break;
+
+		default:
+			printf("ERROR: Incorrect Option: Try Again\n\n");
+		}
+
+	} while (option != 0);
+
+    printf("Exiting Employee Data Program. Good Bye!!!\n");
+
+	return 0; 
+}
 
 
 

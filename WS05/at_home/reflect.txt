@@ -1,0 +1,28 @@
+Name:           Donghyeon Kim
+Student Number: 151613197
+Email:          dkim167@myseneca.ca
+Section:        NSS
+Workshop:       5 (at-home) Reflection
+
+In this workshop I learned how to declare structs.
+I also learned how to replace parallel arrays with array of structs.
+Structs are similar to arrays because they both represent a contiguous
+section of memory; however struct can hold data of different types while
+arrays can only hold data of the same type.
+
+Parsing user-input with a switch statement was interesting.
+As long as the options are numeric, switch statement is perfectly capable
+of controlling which code to be executed and also handle invalid input
+by specifying the default case.
+
+Unlike the previous workshop, array of structs were used in this workshop
+instead of parallel arrays. I prefer using array of structs for two reasons.
+First of all, it is more clear to see the structure of my data when I use
+C-structs. Secondly, the initialization process is more concise with array
+of structs. If I were to use parallel arrays, I would have needed to declare
+as many arrays as the number of the fields.
+
+Better way of declaring a struct is to declare it in a header file (".h").
+If we declare a function or a struct in a ".c" file, it cannot be used
+in other ".c" files. Declaring a struct in a header file allows the struct
+to be used in multiple ".c" files, thus increase the re-usability.
